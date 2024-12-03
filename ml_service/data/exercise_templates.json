@@ -1,0 +1,272 @@
+{
+  "templates": [
+    {
+      "topic": "variables and data types",
+      "difficulty": "beginner",
+      "template": "Create a program that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "converts temperature from Celsius to Fahrenheit",
+          "concept": "variables and arithmetic operations",
+          "test_cases": [
+            {
+              "input": "celsius = 0",
+              "expected_output": "32.0",
+              "explanation": "Water freezing point"
+            },
+            {
+              "input": "celsius = 100",
+              "expected_output": "212.0",
+              "explanation": "Water boiling point"
+            }
+          ]
+        },
+        {
+          "action": "calculates the area of a circle",
+          "concept": "floating-point numbers and mathematical operations",
+          "test_cases": [
+            {
+              "input": "radius = 1",
+              "expected_output": "3.14159",
+              "explanation": "Unit circle"
+            },
+            {
+              "input": "radius = 2",
+              "expected_output": "12.56637",
+              "explanation": "Circle with radius 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "strings",
+      "difficulty": "beginner",
+      "template": "Write a program that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "counts the number of vowels in a string",
+          "concept": "string methods and loops",
+          "test_cases": [
+            {
+              "input": "text = 'hello world'",
+              "expected_output": "3",
+              "explanation": "3 vowels: e, o, o"
+            },
+            {
+              "input": "text = 'PYTHON'",
+              "expected_output": "1",
+              "explanation": "1 vowel: O"
+            }
+          ]
+        },
+        {
+          "action": "checks if a string is a palindrome",
+          "concept": "string slicing and comparison",
+          "test_cases": [
+            {
+              "input": "text = 'racecar'",
+              "expected_output": "True",
+              "explanation": "racecar is a palindrome"
+            },
+            {
+              "input": "text = 'python'",
+              "expected_output": "False",
+              "explanation": "python is not a palindrome"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "lists",
+      "difficulty": "intermediate",
+      "template": "Create a function that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "finds the second largest number in a list",
+          "concept": "list sorting and indexing",
+          "test_cases": [
+            {
+              "input": "numbers = [5, 2, 8, 1, 9]",
+              "expected_output": "8",
+              "explanation": "9 is largest, 8 is second largest"
+            },
+            {
+              "input": "numbers = [3, 3, 3]",
+              "expected_output": "3",
+              "explanation": "All numbers are the same"
+            }
+          ]
+        },
+        {
+          "action": "rotates a list by k positions",
+          "concept": "list slicing and concatenation",
+          "test_cases": [
+            {
+              "input": "lst = [1, 2, 3, 4, 5]; k = 2",
+              "expected_output": "[4, 5, 1, 2, 3]",
+              "explanation": "Rotate right by 2 positions"
+            },
+            {
+              "input": "lst = [1, 2, 3]; k = 4",
+              "expected_output": "[3, 1, 2]",
+              "explanation": "k > length, wraps around"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "dictionaries",
+      "difficulty": "intermediate",
+      "template": "Implement a function that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "finds the most frequent character in a string",
+          "concept": "dictionaries and character counting",
+          "test_cases": [
+            {
+              "input": "text = 'programming'",
+              "expected_output": "'g'",
+              "explanation": "g appears twice"
+            },
+            {
+              "input": "text = 'hello'",
+              "expected_output": "'l'",
+              "explanation": "l appears twice"
+            }
+          ]
+        },
+        {
+          "action": "merges two dictionaries summing values of common keys",
+          "concept": "dictionary methods and arithmetic",
+          "test_cases": [
+            {
+              "input": "dict1 = {'a': 1, 'b': 2}; dict2 = {'b': 3, 'c': 4}",
+              "expected_output": "{'a': 1, 'b': 5, 'c': 4}",
+              "explanation": "Common key 'b' values are summed"
+            },
+            {
+              "input": "dict1 = {'x': 10}; dict2 = {'y': 20}",
+              "expected_output": "{'x': 10, 'y': 20}",
+              "explanation": "No common keys"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "error handling",
+      "difficulty": "intermediate",
+      "template": "Write a function that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "safely divides two numbers and handles division by zero",
+          "concept": "try-except blocks",
+          "test_cases": [
+            {
+              "input": "a = 10; b = 2",
+              "expected_output": "5.0",
+              "explanation": "Normal division"
+            },
+            {
+              "input": "a = 10; b = 0",
+              "expected_output": "'Error: Division by zero'",
+              "explanation": "Error handling case"
+            }
+          ]
+        },
+        {
+          "action": "converts a string to integer with validation",
+          "concept": "multiple exception handling",
+          "test_cases": [
+            {
+              "input": "text = '123'",
+              "expected_output": "123",
+              "explanation": "Valid integer string"
+            },
+            {
+              "input": "text = '12.34'",
+              "expected_output": "'Error: Invalid integer'",
+              "explanation": "Float string - invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "file handling",
+      "difficulty": "advanced",
+      "template": "Create a program that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "counts words in a text file",
+          "concept": "file reading and string manipulation",
+          "test_cases": [
+            {
+              "input": "filename = 'sample.txt' # contains: 'hello world\\nPython programming'",
+              "expected_output": "4",
+              "explanation": "Four words in total"
+            },
+            {
+              "input": "filename = 'empty.txt' # empty file",
+              "expected_output": "0",
+              "explanation": "Empty file has 0 words"
+            }
+          ]
+        },
+        {
+          "action": "merges multiple CSV files",
+          "concept": "file writing and data processing",
+          "test_cases": [
+            {
+              "input": "files = ['data1.csv', 'data2.csv'] # containing: 'id,name\\n1,John' and 'id,name\\n2,Jane'",
+              "expected_output": "'id,name\\n1,John\\n2,Jane'",
+              "explanation": "Merged CSV content"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "object oriented programming",
+      "difficulty": "advanced",
+      "template": "Implement a class that {action} using {concept}.",
+      "examples": [
+        {
+          "action": "represents a bank account with deposit and withdrawal methods",
+          "concept": "classes, methods, and attributes",
+          "test_cases": [
+            {
+              "input": "account = BankAccount(1000); account.withdraw(500); account.balance",
+              "expected_output": "500",
+              "explanation": "Balance after withdrawal"
+            },
+            {
+              "input": "account = BankAccount(100); account.withdraw(200)",
+              "expected_output": "'Error: Insufficient funds'",
+              "explanation": "Withdrawal exceeds balance"
+            }
+          ]
+        },
+        {
+          "action": "implements a custom stack data structure",
+          "concept": "class methods and list operations",
+          "test_cases": [
+            {
+              "input": "stack = Stack(); stack.push(1); stack.push(2); stack.pop()",
+              "expected_output": "2",
+              "explanation": "LIFO order"
+            },
+            {
+              "input": "stack = Stack(); stack.pop()",
+              "expected_output": "'Error: Stack is empty'",
+              "explanation": "Pop from empty stack"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

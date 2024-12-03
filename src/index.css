@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --card-bg-from: 236 72% 79% / 0.1;
+    --card-bg-via: 217 91% 60% / 0.1;
+    --card-bg-to: 271 91% 65% / 0.1;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 240 5% 84%;
+    --gradient-start: 330 81% 60%;
+    --gradient-end: 217 91% 60%;
+    --button-from: 330 81% 60% / 0.8;
+    --button-to: 217 91% 60% / 0.8;
+    --button-hover-from: 330 81% 55% / 0.8;
+    --button-hover-to: 217 91% 55% / 0.8;
+  }
+
+  .light-theme {
+    --background: 0 0% 100%;
+    --card-bg-from: 330 81% 60% / 0.05;
+    --card-bg-via: 217 91% 60% / 0.05;
+    --card-bg-to: 271 91% 65% / 0.05;
+    --text-primary: 240 10% 3.9%;
+    --text-secondary: 240 5% 26%;
+    --gradient-start: 330 81% 60%;
+    --gradient-end: 217 91% 60%;
+    --button-from: 330 81% 60% / 0.9;
+    --button-to: 217 91% 60% / 0.9;
+    --button-hover-from: 330 81% 55% / 0.9;
+    --button-hover-to: 217 91% 55% / 0.9;
+  }
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+    background-color: hsl(var(--background));
+    color: hsl(var(--text-primary));
+  }
+
+  select, input, textarea {
+    color: hsl(var(--text-primary));
+    background-color: hsl(var(--background));
+    border-color: hsl(var(--text-primary) / 0.2);
+  }
+
+  select option {
+    background-color: hsl(var(--background));
+    color: hsl(var(--text-primary));
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-gradient-to-br backdrop-blur-sm border shadow-xl 
+           hover:shadow-2xl transition-all duration-300 rounded-2xl;
+    --tw-border-opacity: 0.1;
+    border-color: hsl(var(--text-primary) / var(--tw-border-opacity));
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--card-bg-from)),
+      hsl(var(--card-bg-via)),
+      hsl(var(--card-bg-to))
+    );
+  }
+  
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-110 hover:rotate-3;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent font-bold;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--gradient-start)),
+      hsl(var(--gradient-end))
+    );
+  }
+
+  .glass-button {
+    @apply flex items-center gap-2 px-6 py-2 rounded-xl text-white font-medium 
+           transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--button-from)),
+      hsl(var(--button-to))
+    );
+  }
+
+  .glass-button:hover {
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--button-hover-from)),
+      hsl(var(--button-hover-to))
+    );
+  }
+
+  .glass-button-secondary {
+    @apply flex items-center gap-2 px-6 py-2 rounded-xl font-medium 
+           transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95;
+    color: hsl(var(--text-primary));
+    background-image: linear-gradient(
+      to right,
+      hsla(var(--text-primary) / 0.1),
+      hsla(var(--text-primary) / 0.2)
+    );
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200;
+    color: hsl(var(--text-secondary));
+  }
+
+  .nav-item:hover {
+    @apply bg-gradient-to-r;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--button-from)),
+      hsl(var(--button-to))
+    );
+    color: white;
+  }
+
+  .nav-item.active {
+    @apply bg-gradient-to-r;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--button-from)),
+      hsl(var(--button-to))
+    );
+    color: white;
+  }
+
+  .stats-card {
+    @apply bg-gradient-to-br p-6 rounded-xl shadow-sm backdrop-blur-sm border
+           hover:shadow-lg transition-all duration-300;
+    --tw-border-opacity: 0.1;
+    border-color: hsl(var(--text-primary) / var(--tw-border-opacity));
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--card-bg-from)),
+      hsl(var(--card-bg-via)),
+      hsl(var(--card-bg-to))
+    );
+  }
+
+  .chart-container {
+    @apply bg-gradient-to-br p-6 rounded-xl shadow-sm backdrop-blur-sm border;
+    --tw-border-opacity: 0.1;
+    border-color: hsl(var(--text-primary) / var(--tw-border-opacity));
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--card-bg-from)),
+      hsl(var(--card-bg-via)),
+      hsl(var(--card-bg-to))
+    );
+  }
+
+  /* Responsive Layout Classes */
+  .responsive-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  .responsive-flex {
+    @apply flex flex-col md:flex-row gap-4;
+  }
+
+  .responsive-padding {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+
+  .responsive-text {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: hsl(var(--text-primary));
+  }
+
+  .text-secondary {
+    color: hsl(var(--text-secondary));
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--background));
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 640px) {
+  .card {
+    @apply rounded-lg;
+  }
+
+  .glass-button {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .nav-item {
+    @apply px-3 py-2 text-sm;
+  }
+}
+
+/* Add these performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  perspective: 1000px;
+}
+
+/* Apply smooth-scroll to all scrollable containers */
+.overflow-auto,
+.overflow-y-auto,
+.overflow-x-auto {
+  @apply smooth-scroll;
+}

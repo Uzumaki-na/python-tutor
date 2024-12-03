@@ -1,0 +1,26 @@
+{
+  "id": "taanya-001",
+  "username": "taanya",
+  "email": "taanya@example.com",
+  "role": "student",
+  "created_at": "2024-12-04T03:03:06.566318",
+  "preferences": {
+    "difficulty_preference": "adaptive",
+    "topic_focus": null,
+    "daily_exercise_goal": 5,
+    "exercise_reminders": true,
+    "theme": "light",
+    "code_editor_theme": "vs-dark"
+  },
+  "progress": {
+    "total_exercises_completed": 0,
+    "correct_solutions": 0,
+    "total_time_spent": 0.0,
+    "streak_days": 0,
+    "last_active": "2024-12-04T03:03:06.562793",
+    "mastered_topics": [],
+    "current_topics": [],
+    "difficulty_levels": {}
+  },
+  "current_session": null
+}
